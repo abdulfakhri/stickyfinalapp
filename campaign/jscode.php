@@ -40,10 +40,13 @@ $border="30px";
 }elseif($style=="Squared"){
 $border="5px";
 }
-$js_code= '<iframe width="300" height="90" 
-style="position:absolute;bottom:5;left:5;border:1px solid black;border-radius:'.$border.';" 
-src="'.$link.'/popup/fetch_data.php?q='.$user.'&delay='.$delay.'&style='.$style.'" title="Javascript Code" frameborder="1" allow="accelerometer; 
-autoplay; clipboard-write;encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+$js_code= '<iframe 
+width="300" height="90" 
+src="'.$link.'/popup/fetch_data.php?q='.$user.'&delay='.$delay.'&style='.$style.'" 
+title="Javascript Code" frameborder="1" allow="accelerometer; 
+autoplay; clipboard-write;encrypted-media; 
+gyroscope; picture-in-picture" 
+allowfullscreen>
 </iframe>';
 $myVar = htmlentities($js_code, ENT_QUOTES);
 echo($myVar);
