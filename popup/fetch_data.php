@@ -69,7 +69,16 @@ return $days;
 
 
 }
+
 $qw=$_GET['q'];
+
+$style=$row["style"];
+
+if($style=="Rounded"){
+    $border="30px";
+}elseif($style=="Squared"){
+    $border="5px";
+}
 
 $sql = "SELECT * FROM sticky_review WHERE st_user='$qw' ORDER BY st_id DESC LIMIT 1";
 $result = mysqli_query($conn, $sql);
@@ -88,13 +97,7 @@ if (mysqli_num_rows($result) > 0) {
           $start_date = strtotime($started_date);
           $today_date = strtotime($today);
 
-          $style=$row["style"];
-
-          if($style=="Rounded"){
-          $border="30px";
-          }elseif($style=="Squared"){
-            $border="5px";
-          }
+          
 
          //$res=($today_date - $start_date)/60/60/24;
          $res =findDateDiff($started_date, $today);
