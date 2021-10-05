@@ -88,6 +88,14 @@ if (mysqli_num_rows($result) > 0) {
           $start_date = strtotime($started_date);
           $today_date = strtotime($today);
 
+          $style=$row["style"];
+
+          if($style=="Rounded"){
+          $border="30px";
+          }elseif($style=="Squared"){
+            $border="5px";
+          }
+
          //$res=($today_date - $start_date)/60/60/24;
          $res =findDateDiff($started_date, $today);
           if($res<=30){
@@ -139,7 +147,7 @@ if (mysqli_num_rows($result) > 0) {
               <span class="fa fa-star checked"></span>
               ';
           }
-       echo "<table >";
+       echo "<table style='width:62px; height:62px;border-radius:".$border.";' >";
        echo "<tr>";
        echo "<td>"."<img style='width:62px; height:62px;border-radius: 30px 30px;'  src=".$up.">"."</td>";
        echo "<td>".
