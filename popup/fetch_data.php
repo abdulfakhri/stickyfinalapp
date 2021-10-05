@@ -72,13 +72,7 @@ return $days;
 
 $qw=$_GET['q'];
 
-$style=$row["style"];
 
-if($style=="Rounded"){
-    $border="30px";
-}elseif($style=="Squared"){
-    $border="5px";
-}
 
 $sql = "SELECT * FROM sticky_review WHERE st_user='$qw' ORDER BY st_id DESC LIMIT 1";
 $result = mysqli_query($conn, $sql);
@@ -96,6 +90,14 @@ if (mysqli_num_rows($result) > 0) {
           $today=date("Y-m-d hh:mm:ss");
           $start_date = strtotime($started_date);
           $today_date = strtotime($today);
+
+          $style=$row["style"];
+
+if($style=="Rounded"){
+    $border="30px";
+}elseif($style=="Squared"){
+    $border="5px";
+}
 
           
 
@@ -150,7 +152,7 @@ if (mysqli_num_rows($result) > 0) {
               <span class="fa fa-star checked"></span>
               ';
           }
-       echo "<table style='border:1px solid gray;border-radius:".$border.";' >";
+       echo "<table style='border:1px solid gray;border-radius:$border;' >";
        echo "<tr>";
        echo "<td>"."<img style='width:62px; height:62px;border-radius: 30px 30px;' src=".$up.">"."</td>";
        echo "<td>".
