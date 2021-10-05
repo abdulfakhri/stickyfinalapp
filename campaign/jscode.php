@@ -43,7 +43,7 @@ $border="5px";
 $js_code= '<iframe 
 width="300" 
 height="90" 
-style="border:0px solid gray;border-radius:$border;"
+style="border:1px solid gray;border-radius:'.$border.';"
 src="'.$link.'/popup/fetch_data.php?q='.$user.'&delay='.$delay.'&style='.$style.'" 
 title="Javascript Code" frameborder="0" 
 allow="accelerometer; 
