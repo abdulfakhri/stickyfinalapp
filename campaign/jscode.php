@@ -41,10 +41,13 @@ $border="30px";
 $border="5px";
 }
 $js_code= '<iframe 
-width="300" height="90" 
+width="300" 
+height="90" 
 src="'.$link.'/popup/fetch_data.php?q='.$user.'&delay='.$delay.'&style='.$style.'" 
-title="Javascript Code" frameborder="1" allow="accelerometer; 
-autoplay; clipboard-write;encrypted-media; 
+title="Javascript Code" frameborder="1" 
+allow="accelerometer; 
+autoplay; clipboard-write;
+encrypted-media; 
 gyroscope; picture-in-picture" 
 allowfullscreen>
 </iframe>';
