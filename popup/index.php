@@ -57,21 +57,17 @@ clearInterval(100);
 });
 */
 function fetchdata(){
- $.ajax({
-  url: 'fetch_data.php?q=8',
-  type: 'post',
-  success: function(data){
-   // Perform operation on return value
-   alert(data);
-  },
+
+   $('#load_posts').load("fetch_data.php?q=8").fadeIn("slow");
+
   complete:function(data){
-   setTimeout(fetchdata,5000);
+   setTimeout(fetchdata,10);
   }
  });
 }
 
 $(document).ready(function(){
- setTimeout(fetchdata,5000);
+ setTimeout(fetchdata,10);
 });
 </script>
 
