@@ -34,17 +34,7 @@
  </head>
  <body>
   <div class="container box">
-   <form name="add_post" method="post">
-    <h3 align="center">Post Page</h3>
-    <div class="form-group">
-     <textarea name="post_name" id="post_name" class="form-control" rows="3"></textarea>
-    </div>
-    <div class="form-group" align="right">
-     <input type="button" name="post_button" id="post_button"  value="Post" class="btn btn-info" />
-     
-    </div>
-   </form>
-   
+
    <br />
    <br />
    <div id="load_posts"></div>
@@ -56,24 +46,7 @@
 </html>
 <script>
 $(document).ready(function(){
- $('#post_button').click(function(){
-  var post_name = $('#post_name').val();
-  //trim() is used to remover spaces
-  if($.trim(post_name) != '')
-  {
-   $.ajax({
-    url:"post.php",
-    method:"POST",
-    data:{post_name:post_name},
-    dataType:"text",
-    success:function(data)
-    {
-     $('#post_name').val("");
-    }
-   });
-  }
- });
- 
+
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
   $('#load_posts').load("fetch_data.php?q=8").fadeIn("slow");
   //load() method fetch data from fetch.php page
