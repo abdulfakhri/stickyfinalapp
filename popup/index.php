@@ -45,15 +45,33 @@
  </body>
 </html>
 <script>
+    /*
 $(document).ready(function(){
 
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
   $('#load_posts').load("fetch_data.php?q=8").fadeIn("slow");
   //load() method fetch data from fetch.php page
  }, 1000);
-   clearInterval(100);
+clearInterval(100);
  
 });
+*/
+function fetchdata(){
+ $.ajax({
+  url: 'fetch_data.php?q=8',
+  type: 'post',
+  success: function(data){
+   // Perform operation on return value
+   alert(data);
+  },
+  complete:function(data){
+   setTimeout(fetchdata,5000);
+  }
+ });
+}
 
+$(document).ready(function(){
+ setTimeout(fetchdata,5000);
+});
 </script>
 
