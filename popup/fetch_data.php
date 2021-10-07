@@ -153,7 +153,7 @@ if($style=="Rounded"){
               ';
           }
        //echo "<table style='border:1px solid gray;border-radius:$border;' >";
-        echo "<table style='border:1px solid gray;border-radius:$border;' >";
+        echo "<table >";
        echo "<tr>";
        echo "<td>"."<img style='width:62px; height:62px;border-radius: 30px 30px;' src=".$up.">"."</td>";
        echo "<td>".
