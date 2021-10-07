@@ -47,10 +47,16 @@
 <script>
 $(document).ready(function(){
 
- setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
-  $('#load_posts').load("fetch_data.php?q=8").fadeIn("slow");
-  //load() method fetch data from fetch.php page
- }, 1000);
- 
-});
+  //var elem = document.getElementById("myBar");   
+  var width = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width == 10) {
+      clearInterval(id);
+    } else {
+      width++; 
+      $('#load_posts').load("fetch_data.php?q=8").fadeIn("slow");
+    }
+  }
+//}
 </script>
