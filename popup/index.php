@@ -33,7 +33,7 @@
   </style>
  </head>
  <body>
-  <div class="container box">
+  <div class="container">
 
    <br />
    <br />
