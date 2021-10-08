@@ -72,7 +72,7 @@ document.getElementById("demo3").innerHTML = url;
   //load() method fetch data from fetch.php page
  }, 100);
 
- setTimeout(fade_out, 5000);
+ setTimeout(fade_out, del);
 
 function fade_out() {
   $("#load_posts").fadeOut().empty();
