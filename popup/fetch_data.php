@@ -109,7 +109,7 @@ $style=$_GET["style"];
           $style=$_GET["style"];
 
     if($style=="Rounded"){
-       $border="30px 20px";
+       $border="30px";
     }elseif($style=="Squared"){
        $border="5px";
     }
