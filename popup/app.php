@@ -1,6 +1,6 @@
 <html>
  <head>
-  <title>Auto Refresh Div Content Using jQuery and AJAX</title>
+  <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
@@ -36,13 +36,13 @@ function getUrlVars() {
     return vars;
 }
 
-var qu = getUrlVars()["q"];
+var usr = getUrlVars()["u"];
 var del = getUrlVars()["delay"];
 var styl = getUrlVars()["style"];
 
 
-var part = "fetch_data.php?q=";
-var url=part+qu+"&delay="+del+"&style="+styl;
+var part = "fetch_data.php?u=";
+var url=part+usr+"&delay="+del+"&style="+styl;
 
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
 
