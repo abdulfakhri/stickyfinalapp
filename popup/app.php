@@ -15,13 +15,10 @@
   </style>
  </head>
  <body>
-  <div class="container">
-
-   <br />
-   <br />
+  
    <div id="load_posts" style='border:1px solid gray;border-radius:<?php echo $_GET['style'];?>;'></div>
   
-  </div>
+ 
  </body>
 </html>
 <script>

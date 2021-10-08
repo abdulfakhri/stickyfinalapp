@@ -3,13 +3,7 @@
 .checked {
   color: orange;
 }
-#review{
-     
-    position: fixed;
-    bottom: 5;
-    left: 5;
-  
-}
+
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php
@@ -152,7 +146,7 @@ $qw=$_GET['u'];
               <span class="fa fa-star checked"></span>
               ';
           }
-       //echo "<div id='review'>";
+      
        echo "<table>";
        echo "<tr>";
        echo "<td>"."<img style='width:62px; height:62px;border-radius: 30px 30px;' src=".$up.">"."</td>";
@@ -160,7 +154,7 @@ $qw=$_GET['u'];
        ."</td>";
        echo "</tr>";
        echo "</table >";
-       //echo "</div>"; 
+     
        
           }
      }
