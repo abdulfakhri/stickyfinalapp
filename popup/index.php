@@ -43,6 +43,7 @@
      we use setInterval() !-->
      <div id="demo1"></div>
        <div id="demo2"></div>
+        <div id="demo3"></div>
   </div>
  </body>
 </html>
@@ -63,7 +64,7 @@ var delay = getUrlVars()["delay"];
 var url="fetch_data.php?q='+qu+'&delay='+delay+'";
 document.getElementById("demo1").innerHTML = qu;
 document.getElementById("demo2").innerHTML = delay;
-
+document.getElementById("demo2").innerHTML = url;
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
   $('#load_posts').load("fetch_data.php?q='+qu+'&delay='+delay+'");
   //$('#load_posts').load("fetch_data.php?q=8&delay=200").fadeIn("slow");
