@@ -3,6 +3,13 @@
 .checked {
   color: orange;
 }
+#review{
+     
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  
+}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php
@@ -156,7 +163,7 @@ $date = date('Y-m-d H:i:s');
               <span class="fa fa-star checked"></span>
               ';
           }
-        
+       echo "<div id='review'>";
        echo "<table style='border:1px solid gray;border-radius:$border;' >";
        echo "<tr>";
        echo "<td>"."<img style='width:62px; height:62px;border-radius: 30px 30px;' src=".$up.">"."</td>";
@@ -165,7 +172,7 @@ $date = date('Y-m-d H:i:s');
        ."</td>";
        echo "</tr>";
        echo "</table >";
-         
+       echo "</div>"; 
        
           }
      }
