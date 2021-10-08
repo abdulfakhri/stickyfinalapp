@@ -5,30 +5,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-  body
-  {
-   margin:0;
-   padding:0;
-   background-color:#f1f1f1;
-  }
-  .box
-  {
-   width:500px;
-   border:1px solid #ccc;
-   background-color:#fff;
-   border-radius:5px;
-   margin-top:100px;
-  }
-  #load_posts
-  {
-   padding:16px;
-   background-color:#f1f1f1;
-   margin-bottom:30px;
-  }
-  #load_posts p
-  {
-   padding:12px;
-   border-bottom:1px dotted #ccc;
+  #load_posts{
+     
+    position: fixed;
+    bottom: 5;
+    left: 5;
+  
   }
   </style>
  </head>
@@ -38,10 +20,7 @@
    <br />
    <br />
    <div id="load_posts" style='border:1px solid gray;border-radius:<?php echo $_GET['style'];?>;'></div>
-   <div id="load"></div>
-   <!-- Refresh this Div content every second!-->
-   <!-- For Refresh Div content every second
-     we use setInterval() !-->
+  
   </div>
  </body>
 </html>

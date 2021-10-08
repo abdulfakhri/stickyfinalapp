@@ -157,7 +157,7 @@ $date = date('Y-m-d H:i:s');
               <span class="fa fa-star checked"></span>
               ';
           }
-       echo "<div id='review'>";
+       //echo "<div id='review'>";
        echo "<table>";
        echo "<tr>";
        echo "<td>"."<img style='width:62px; height:62px;border-radius: 30px 30px;' src=".$up.">"."</td>";
@@ -166,7 +166,7 @@ $date = date('Y-m-d H:i:s');
        ."</td>";
        echo "</tr>";
        echo "</table >";
-       echo "</div>"; 
+       //echo "</div>"; 
        
           }
      }
