@@ -70,7 +70,7 @@ var url=part+qu+"&delay="+del;
   //$('#load_posts').load("fetch_data.php?q=8&delay=200");
   //load() method fetch data from fetch.php page
  }, 100);
- //cr=parseInt(del);
+ var cr=parseInt(del);
  //setTimeout(fade_out, 10000);
  setTimeout(fade_out, parseInt(del));
  
