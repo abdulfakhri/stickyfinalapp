@@ -66,7 +66,7 @@ smalltext{
 
 <script>
 
-var deadline = <?php echo date('Y-m-d h:i:s'); ?>;
+var deadline = <?php echo date('Y-m-d H:i:s', (time() +20)); ?>;
 
 
 var x = setInterval(function() {
