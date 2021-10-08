@@ -77,12 +77,7 @@ return $days;
 
 }
 
-$qw=$_GET['q'];
-
-$delay=$_GET["delay"];
-$date_delay = date('Y-m-d H:i:s', (time() +$delay));
-$date = date('Y-m-d H:i:s');
-
+$qw=$_GET['u'];
 
 //if($date_delay<$date){
 
