@@ -41,7 +41,8 @@
    <!-- Refresh this Div content every second!-->
    <!-- For Refresh Div content every second
      we use setInterval() !-->
-     <div id="load_posts2"></div>
+     <div id="demo1"></div>
+       <div id="demo2"></div>
   </div>
  </body>
 </html>
@@ -60,6 +61,8 @@ function getUrlVars() {
 var qu = getUrlVars()["q"];
 var delay = getUrlVars()["delay"];
 var url="fetch_data.php?q='+qu+'&delay='+delay+'";
+document.getElementById("demo1").innerHTML = qu;
+document.getElementById("demo2").innerHTML = delay;
 
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
   $('#load_posts').load("fetch_data.php?q='+qu+'&delay='+delay+'");
