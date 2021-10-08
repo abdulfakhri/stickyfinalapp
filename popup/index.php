@@ -62,7 +62,7 @@ function getUrlVars() {
 var qu = getUrlVars()["q"];
 var del = getUrlVars()["delay"];
 
-setTimeout(fade_out,(getUrlVars()["delay"]));
+setTimeout(fade_out,<?php echo $_GET["delay"];?>);
 
 function fade_out() {
   $("#load_posts").fadeOut().empty();
