@@ -79,8 +79,8 @@ $date = date('Y-m-d H:i:s');
 
      if($date_delay>$date){
 
-       $sql = "SELECT * FROM sticky_review WHERE st_user='$qw' ORDER BY st_id DESC LIMIT 1";
-       $result = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM sticky_review WHERE st_user='$qw' ORDER BY st_id DESC LIMIT 1";
+    $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
     // output data of each row
@@ -173,11 +173,7 @@ $date = date('Y-m-d H:i:s');
 
      }
      
-     if($date>$date_delay){
-
-       echo "No";
-
-     }
+     
 
 
  
