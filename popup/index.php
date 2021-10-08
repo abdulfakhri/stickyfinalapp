@@ -62,7 +62,7 @@ function getUrlVars() {
 var qu = getUrlVars()["q"];
 var del = getUrlVars()["delay"];
 
-c_del=parseInt(del);
+c_del=Number(del);
 
 setTimeout(fade_out,c_del);
 
