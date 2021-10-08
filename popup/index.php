@@ -58,7 +58,7 @@ function getUrlVars() {
 
 var qu = getUrlVars()["q"];
 var delay = getUrlVars()["delay"];
-var url="fetch_data.php?q=".qu."&delay=".delay;
+var url="fetch_data.php?q='.qu.'&delay='.delay.'";
 
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
   $('#load_posts').load(url);
