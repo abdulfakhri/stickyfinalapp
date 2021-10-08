@@ -6,8 +6,8 @@
 #review{
      
     position: fixed;
-    bottom: 2;
-    left: 2;
+    bottom: 5;
+    left: 5;
   
 }
 </style>
