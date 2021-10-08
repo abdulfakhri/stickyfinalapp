@@ -45,7 +45,7 @@
  </body>
 </html>
 <script>
-    /*
+    
 $(document).ready(function(){
 
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
@@ -55,19 +55,6 @@ $(document).ready(function(){
 clearInterval(100);
  
 });
-*/
-function fetchdata(){
 
-   $('#load_posts').load("fetch_data.php?q=8").fadeIn("slow");
-
-  complete:function(data){
-   setTimeout(fetchdata,10);
-  }
- });
-}
-
-$(document).ready(function(){
- setTimeout(fetchdata,10);
-});
 </script>
 
