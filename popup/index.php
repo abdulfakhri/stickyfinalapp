@@ -64,10 +64,6 @@ var del = getUrlVars()["delay"];
 
 c_del=Number(del);
 
-setTimeout(fade_out,5000);
-function fade_out() {
-  $("#load_posts").fadeOut().empty();
-}
 
 
 var part = "fetch_data.php?q=";
@@ -81,7 +77,11 @@ document.getElementById("demo3").innerHTML = url;
   //load() method fetch data from fetch.php page
  }, 100);
 
- 
+ setTimeout(fade_out,5000);
+function fade_out() {
+  $("#load_posts").fadeOut().empty();
+}
+
 
  
 });
