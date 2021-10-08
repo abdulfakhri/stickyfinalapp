@@ -66,8 +66,8 @@ var url=part+qu+"&delay="+del;
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
 
 
-	//$('#load_posts').load(url);
-  $('#load_posts').load("fetch_data.php?q=8&delay=200");
+	$('#load_posts').load(url);
+  //$('#load_posts').load("fetch_data.php?q=8&delay=200");
   //load() method fetch data from fetch.php page
  }, 100);
 
