@@ -38,6 +38,7 @@
    <br />
    <br />
    <div id="load_posts"></div>
+   <div id="load"></div>
    <!-- Refresh this Div content every second!-->
    <!-- For Refresh Div content every second
      we use setInterval() !-->
@@ -78,6 +79,8 @@ var url=part+qu+"&delay="+del;
  var st=p1+p2+p3;
  console.log(st);
  
+ document.getElementById("load").innerHTML = st;
+
  setTimeout(fade_out, 10000);
  
 function fade_out() {
