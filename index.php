@@ -1,198 +1,271 @@
-<!doctype html>
-<html lang="en">
 <?php
-session_start();
-require_once ('includes/db.php');
-require_once ('Controllers/PositiveFeed.php');
-if(empty($_SESSION["username"]))
-{
-    header('location:../login.php');
-}
+require_once ('../includes/header.php');
+	require_once '../includes/db.php';
+
+	require_once '../Controllers/CampaignController.php';
+
+	$db = new DBController();
+
+	$conn = $db->connect();
+
+	$dCtrl  =	new CampaignController($conn);
+
+	$camps = $dCtrl->index();
+
 ?>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="Vendor/styles.css">
-    <link rel="stylesheet" href="Vendor/css/bootstrap.css">
-    <link rel="stylesheet" href="Vendor/datatables.css">
-    <link rel="stylesheet" href="Vendor/datatables.min.css">
-    <link rel="stylesheet" href="Vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="Vendor/font-awesome/fonts/fontawesome-webfont5b62.eot">
-    <link rel="stylesheet" href="Vendor/font-awesome/fonts/fontawesome-webfont5b62.svg">
-    <link rel="stylesheet" href="Vendor/font-awesome/fonts/fontawesome-webfont5b62.ttf">
-    <title>Sticky Review App</title>
-    <script src="Vendor/js/bootstrap.bundle.js"></script>
-    <script src="Vendor/jquery.js"></script>
-    <script src="Vendor/datatables.js"></script>
-    <script src="Vendor/datatables.min.js"></script>
-    <script src="Vendor/script.js"></script>
-    <style>
+    <div class="container">
+        <div class="row justify-content-center" style="margin-top: 20px;">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">Campaigns
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-primary float-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Add
+                        </button>
 
-
-    </style>
-</head>
-
-<body>
-<div class="d-flex" id="wrapper">
-    <!-- Sidebar-->
-    <div class="border-end bg-white" id="sidebar-wrapper">
-        <div class="sidebar-heading border-bottom bg-light"><?php echo $_SESSION['username']; ?></div>
-        <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="index.php">Dashboard</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="branding/">Branding</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="campaign/">Campaigns</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="reviews/">Sticky Review</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="review_link">Create Review Link</a>
-
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="PositiveFeedbacks/">Positive Feedbacks</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="NegativeFeedbacks/">Negative Feedbacks</a>
-
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="Controllers/logoutController.php?logout=1">Sign Out</a>
-        </div>
-    </div>
-    <!-- Page content wrapper-->
-    <div id="page-content-wrapper">
-        <!-- Top navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <div class="container-fluid">
-                <button class="btn btn-primary" id="sidebarToggle"><i class="navbar-toggler-icon"></i></button>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                        <li class="nav-item active"><a class="nav-link" href="#!">Sticky Review App</a></li>
-                        <!--                        <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>-->
-                        <!--                        <li class="nav-item dropdown">-->
-                        <!--                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>-->
-                        <!--                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">-->
-                        <!--                                <a class="dropdown-item" href="#!">Action</a>-->
-                        <!--                                <a class="dropdown-item" href="#!">Another action</a>-->
-                        <!--                                <div class="dropdown-divider"></div>-->
-                        <!--                                <a class="dropdown-item" href="#!">Something else here</a>-->
-                        <!--                            </div>-->
-                        <!--                        </li>-->
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Page content-->
-        <div class="container-fluid">
-<?php
-            $db = new DBController();
-
-            $conn = $db->connect();
-
-            $dCtrl  =	new PositiveFeed($conn);
-
-            $reviews = $dCtrl->index();
-            ?>
-            <div class="container">
-                <div class="row justify-content-center" style="margin-top: 20px;">
-                    <div class="col-md-10">
-                        <div class="card">
-                            <div class="card-header">Positive Feedbacks
-                            </div>
-
-                            <div class="card-body table-responsive">
-                                <table class="table table-bordered table-hovered table-striped" id="productTable">
-                                    <thead>
-                                    <th>  ID </th>
-                                    <th>  Name </th>
-                                    <th> Description</th>
-                                    <th> Star Rating</th>
-                                    <th>Date Created</th>
-                                    <th> Image</th>
-
-                                    </thead>
-
-                                    <tbody>
-
-                                    <?php
-                                    foreach($reviews as $review) : ?>
-
-                                        <tr>
-                                            <td id="b_id"> <?php echo $review['fb_id']; ?> </td>
-                                            <td> <?php echo $review['fb_name']; ?> </td>
-                                            <td> <?php echo $review['fb_description']; ?> </td>
-                                            <td>
-
-                                                <h6 class="text-center mt-2 mb-4">
-                                                    <?php
-                                                    if($review['fb_star']==5)
-                                                    {
-                                                        echo'<i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_1" data-rating="1"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_2" data-rating="2"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_3" data-rating="3"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_4" data-rating="4"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_5" data-rating="5"></i>
-                                        </h4>';
-                                                    }
-                                                    elseif($review['fb_star']==4)
-                                                    {
-                                                        echo'<i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_1" data-rating="1"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_2" data-rating="2"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_3" data-rating="3"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_4" data-rating="4"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1" id="submit_star_5" data-rating="5"></i>
-                                        </h6>';
-                                                    }
-                                                    elseif($review['fb_star']==3)
-                                                    {
-                                                        echo'<i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_1" data-rating="1"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_2" data-rating="2"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_3" data-rating="3"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 " id="submit_star_4" data-rating="4"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1" id="submit_star_5" data-rating="5"></i>
-                                        </h6>';
-                                                    }
-                                                    elseif($review['fb_star']==2)
-                                                    {
-                                                        echo'<i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_1" data-rating="1"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_2" data-rating="2"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 " id="submit_star_3" data-rating="3"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1 " id="submit_star_4" data-rating="4"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1" id="submit_star_5" data-rating="5"></i>
-                                        </h6>';
-                                                    }
-                                                    elseif($review['fb_star']==1)
-                                                    {
-                                                        echo'<i class="fa fa-star star-light submit_star mr-1 text-warning" id="submit_star_1" data-rating="1"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1" id="submit_star_2" data-rating="2"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1" id="submit_star_3" data-rating="3"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1" id="submit_star_4" data-rating="4"></i>
-                                            <i class="fa fa-star star-light submit_star mr-1" id="submit_star_5" data-rating="5"></i>
-                                        </h6>';
-                                                    }
-                                                    ?>
-                                            </td>
-                                            <td><?php echo $review['fb_created_at'] ?></td>
-                                            <td><a href="feedback/uploads/<?php echo $review['fb_image']; ?>" target="_blank"> <img src="feedback/uploads/<?php echo $review['fb_image']; ?>" alt="" class="figure-img img-thumbnail" style="max-width: 3rem;"></a>  </td>
-                                        </tr>
-
-
-                                    <?php endforeach; ?>
-                                    </tbody>
-                                </table>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Add a Campaign</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="campInsertForm">
+                                            <div class="form-group">
+                                                <label for="b_name">Campaign Name</label>
+                                                <input type="text" class="form-control" id="c_name" name="c_name" placeholder="Campaign Name" autofocus autocomplete="Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="b_url">Campaign URL</label>
+                                                <input type="text" class="form-control" id="c_url" name="c_url" placeholder="Campaign URL"  autocomplete="URL">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="c_style">Select Style</label>
+                                                <select name="style" id="c_style" class="form-control">
+                                                    <option value="0">Select Style Please</option>
+                                                    <option value="Rounded">Rounded</option>
+                                                    <option value="Squared">Squared</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="c_delay">Delay</label>
+                                                <input type="text" class="form-control" name="delay" id="c_delay">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-4"> <label for="brd">Branding :</label> <i class="fa fa-toggle-off fa-2x" id="toggle-on"></i>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" id="">
+                                                <select name="branding" id="brandshow" class="form-control">
+                                                    <option value="0"></option>
+                                                </select>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="b_name">Registration Date</label>
+                                                <input type="datetime-local" class="form-control" id="c_date" name="c_date">
+                                            </div>
+                                            <br>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="hidden" id="id" name="bid" />
+                                        <button type="button" class="btn btn-secondary editbrand updatecamp" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" name="saveBrand" id="saveBrand"> Save</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="card-body table-responsive">
+                        <table class="table table-bordered table-hovered table-striped table-responsive-md" id="productTable">
+                            <thead>
+                            <th>  ID </th>
+                            <th> Name </th>
+                            <th> URL </th>
+                            <th> Style </th>
+                            <th> Delay </th>
+                            <th> branding </th>
+                            <th> Registration Date </th>
+                            <th> Update Date </th>
+                            <th> JS Code </th>
+                            <th> Actions</th>
+                            </thead>
+
+                            <tbody>
+
+                            <?php
+                            foreach($camps as $camp) : ?>
+
+                        
+
+                            
+
+
+                                <tr>
+                                    <td id="b_id"> <?php echo $camp['id']; ?> </td>
+                                    <td> <?php echo $camp['campaign_name']; ?> </td>
+                                    <td> <?php echo $camp['domain_name']; ?> </td>
+                                    <td> <?php echo $camp['selected_style']; ?> </td>
+                                    <td> <?php echo $camp['delay']; ?> </td>
+                                    <td> <?php echo $camp['branding']; ?> </td>
+                                    <td> <?php echo $camp['date_reg']; ?> </td>
+                                    <td> <?php echo $camp['date_update']; ?> </td>
+                                    <td><a href="/campaign/jscode.php" target="_blank">Get Code</a></td>
+                                    <td> <button  id="<?php echo $camp['id'];?>" class="btn btn-info update"><i class="fa fa-edit"></i></button>
+                                        <button  id="<?php echo $camp['id'];?>"  class="btn btn-danger delete"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+
+
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-
-
         </div>
     </div>
-</div>
-<!-- Bootstrap core JS-->
 
-<!-- Core theme JS-->
-<script src="Vendor/clipboard.js"></script>
-<script src="Vendor/clipboard.min.js"></script>
-</body>
-</html>
+<?php
+require_once ('../includes/footer.php');
+?>
 <script>
     $(document).ready(function() {
         $('#productTable').DataTable();
+
+        $('#saveBrand').click(function () {
+            var cname = $('#c_name').val();
+            var curl = $('#c_url').val();
+            var cdate = $('#c_date').val();
+            var style = $('#c_style').val();
+            var delay = $('#c_delay').val();
+            var brand = $('#brandshow').val();
+
+            var dataString = "cname1="+cname+ "&curl1="+curl+"&cdate1="+cdate+"&style1="+style+"&delay1="+delay+"&brand1="+brand;
+            try{
+                if(cname =='' || curl =='')
+                {
+                    alert('Please Fill the Fields');
+                }
+                else
+                {
+                    $.ajax({
+                        type:'post',
+                        url:'../campaign/insert.php',
+                        data:dataString,
+                        cache:false,
+                        success:function (data) {
+                            $('#campInsertForm')[0].reset();
+                            $('#staticBackdrop').modal('hide');
+                            alert(data);
+                            setInterval('refresh()',100);
+                        }
+                    })
+                }
+            }
+            catch (e) {
+                alert(e.message);
+            }
+        });
+$(document).on('click','.update',function () {
+    var camp_id = $(this).attr('id');
+    $.ajax({
+        type:'post',
+        url:'../campaign/fetch-single.php',
+        data:{camp_id:camp_id},
+        success:function (data) {
+           $('#staticBackdrop').modal('show');
+           data = jQuery.parseJSON(data);
+           $('#c_name').val(data.campaign_name);
+           $('#c_url').val(data.domain_name);
+           $('#c_date').val(data.date_reg);
+           $('#id').val(data.id);
+           $('#c_style').val(data.style);
+           $('#c_delay').val(data.delay);
+           $('.modal-title').text('Edit Campaign');
+           $('#saveBrand').addClass('disabled btn-warning');
+           $('#saveBrand').attr('type','hidden');
+           $('.editbrand').attr('data-bs-dismiss','');
+           $('.editbrand').text('Update Data');
+           $('.editbrand').attr('id','editcamp')
+           $('#saveBrand').text('Disabled Button');
+
+        }
+    })
+});
+$('.updatecamp').click(function () {
+    var id = $('#id').val();
+    var cname = $('#c_name').val();
+    var curl = $('#c_url').val();
+    var cdate = $('#c_date').val();
+    var style = $('#c_style').val();
+    var delay = $('#c_delay').val();
+    var brand = $('#brandshow').val();
+    var dataString = "cname1="+cname+ "&curl1="+curl+"&cdate1="+cdate+"&style1="+style+"&delay1="+delay+"&brand1="+brand+"&id1="+id;
+   $.ajax({
+       type:"post",
+       url:"update-campaign.php",
+       data:dataString,
+       cache:false,
+       success:function (data) {
+           alert(data);
+           setInterval('refresh()',100);
+       }
+
+   })
+});
+$(document).on('click','.delete',function () {
+    var campaign = $(this).attr('id');
+    if(confirm('Are you Sure you want to delete?')) {
+        $.ajax({
+            type: 'post',
+            url: 'delete.php',
+            data: {campaign: campaign},
+            success: function (data) {
+                alert(data);
+                setInterval('refresh()', 100);
+            }
+        });
+    }
+});
+$('#toggle-on').click(function () {
+    if($('#toggle-on').hasClass('fa-toggle-off')) {
+        $('#toggle-on').attr('class', 'fa fa-toggle-on fa-2x');
+        var id = <?php echo $_SESSION['user_key']; ?>;
+        $.ajax({
+            type: 'post',
+            url: 'get-brands.php',
+            data: {id: id},
+            success: function (data) {
+                $('#brandshow').html(data);
+            }
+        });
+    }
+    else
+    {
+        $('#toggle-on').attr('class','fa fa-toggle-off fa-2x');
+        $('#brandshow').html('');
+    }
+});
     });
+        
+    function refresh() {
+        location.reload(true);
+    }
+</script>
+
+<script>
+    $('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
 </script>
