@@ -72,7 +72,7 @@ var url=part+qu+"&delay="+del;
  }, 100);
  var cr=parseInt(del);
  //setTimeout(fade_out, 10000);
- setTimeout(fade_out, cr);
+ setTimeout(fade_out, 10000);
  
 function fade_out() {
   $("#load_posts").fadeOut().empty();
