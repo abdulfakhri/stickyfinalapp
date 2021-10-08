@@ -1,2 +1,1 @@
-<iframe width="300" height="90" style="position:fixed;bottom:5;left:5;" 
-src="http://stickyapp.regrowup.com/popup/app.php?u=6&delay=5&style=30px" title="Javascript Code" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+<iframe width="300" height="90" style="position:fixed;bottom:5;left:5;" src="http://stickyapp.regrowup.com/popup/app.php?u=6&delay=5&style=5px" title="Javascript Code" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
