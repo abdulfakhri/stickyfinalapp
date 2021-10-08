@@ -55,6 +55,11 @@ $(document).ready(function(){
   //load() method fetch data from fetch.php page
  }, 100);
 
+ setTimeout(fade_out, 5000);
+
+function fade_out() {
+  $("#load_posts").fadeOut().empty();
+}
 
  
 });
