@@ -1,91 +1,68 @@
-
-<!DOCTYPE HTML>
 <html>
-<head>
-<style>
-body{
-	text-align: center;
-	background: #00ECB9;
-font-family: sans-serif;
-font-weight: 100;
-}
-h1{
-color: #396;
-font-weight: 100;
-font-size: 40px;
-margin: 40px 0px 20px;
-}
-#clockdiv{
-	font-family: sans-serif;
-	color: #fff;
-	display: inline-block;
-	font-weight: 100;
-	text-align: center;
-	font-size: 30px;
-}
-#clockdiv > div{
-	padding: 10px;
-	border-radius: 3px;
-	background: #00BF96;
-	display: inline-block;
-}
-#clockdiv div > span{
-	padding: 15px;
-	border-radius: 3px;
-	background: #00816A;
-	display: inline-block;
-}
-smalltext{
-	padding-top: 5px;
-	font-size: 16px;
-}
-</style>
-</head>
-<body>
-<h1>Countdown Clock</h1>
-<div id="clockdiv">
-<div>
-	<span class="days" id="day"></span>
-	<div class="smalltext">Days</div>
-</div>
-<div>
-	<span class="hours" id="hour"></span>
-	<div class="smalltext">Hours</div>
-</div>
-<div>
-	<span class="minutes" id="minute"></span>
-	<div class="smalltext">Minutes</div>
-</div>
-<div>
-	<span class="seconds" id="second"></span>
-	<div class="smalltext">Seconds</div>
-</div>
-</div>
+ <head>
+  <title>Auto Refresh Div Content Using jQuery and AJAX</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+  body
+  {
+   margin:0;
+   padding:0;
+   background-color:#f1f1f1;
+  }
+  .box
+  {
+   width:500px;
+   border:1px solid #ccc;
+   background-color:#fff;
+   border-radius:5px;
+   margin-top:100px;
+  }
+  #load_posts
+  {
+   padding:16px;
+   background-color:#f1f1f1;
+   margin-bottom:30px;
+  }
+  #load_posts p
+  {
+   padding:12px;
+   border-bottom:1px dotted #ccc;
+  }
+  </style>
+ </head>
+ <body>
+  <div class="container">
 
-<p id="demo"></p>
-
-<script>
-
-var dl = new Date().getTime();
-var deadline=dl+1;
-
-
-var x = setInterval(function() {
-
-var now = new Date().getTime();
-var t = deadline - now;
-
-    if (t == 0) {
-		clearInterval(x);
-		document.getElementById("demo").innerHTML = "TIME UP";
-		document.getElementById("day").innerHTML ='0';
-		document.getElementById("hour").innerHTML ='0';
-		document.getElementById("minute").innerHTML ='0' ;
-		document.getElementById("second").innerHTML = '0'; 
-    }
-
-}, 1000);
-</script>
-</body>
+   <br />
+   <br />
+   <div id="load_posts"></div>
+   <!-- Refresh this Div content every second!-->
+   <!-- For Refresh Div content every second
+     we use setInterval() !-->
+  </div>
+ </body>
 </html>
+<script>
+    
+$(document).ready(function(){
+    
+
+ setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
+  $('#load_posts').load("fetch_data.php?q=8&delay=200");
+  //$('#load_posts').load("fetch_data.php?q=8&delay=200").fadeIn("slow");
+  //load() method fetch data from fetch.php page
+ }, 100);
+
+ setTimeout(fade_out, 5000);
+
+function fade_out() {
+  $("#load_posts").fadeOut().empty();
+}
+
+ 
+});
+
+</script>
 
