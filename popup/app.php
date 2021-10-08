@@ -73,8 +73,8 @@ var del = getUrlVars()["delay"];
 var part = "fetch_data.php?q=";
 var url=part+qu+"&delay="+del;
 
-	$('#load_posts').load(url);
-  //$('#load_posts').load("fetch_data.php?q=8&delay=200").fadeIn("slow");
+	//$('#load_posts').load(url);
+  $('#load_posts').load("fetch_data.php?q=8&delay=200").fadeIn("slow");
   //load() method fetch data from fetch.php page
  }, 100);
 
