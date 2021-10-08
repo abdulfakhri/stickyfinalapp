@@ -83,6 +83,7 @@ $delay=$_GET["delay"];
 $date_delay = date('Y-m-d H:i:s', (time() +$delay));
 $date = date('Y-m-d H:i:s');
 //echo $date; 
+$style=$_GET["style"];
 
 //if($date_delay<$date){
 
@@ -110,7 +111,7 @@ $date = date('Y-m-d H:i:s');
     if($style=="Rounded"){
        $border="30px 20px";
     }elseif($style=="Squared"){
-    $border="5px";
+       $border="5px";
     }
          //$res=($today_date - $start_date)/60/60/24;
          $res =findDateDiff($started_date, $today);
