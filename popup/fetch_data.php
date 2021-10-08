@@ -80,9 +80,9 @@ $date = date('Y-m-d H:i:s');
      if($date_delay<=$date){
 
        $sql = "SELECT * FROM sticky_review WHERE st_user='$qw' ORDER BY st_id DESC LIMIT 1";
-$result = mysqli_query($conn, $sql);
+       $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         //echo "id: ".$row["st_id"]." - Name: ".$row["st_name"]." ".$row["st_desc"]."<br>";
@@ -100,18 +100,15 @@ if (mysqli_num_rows($result) > 0) {
 
           $style=$row["style"];
 
-if($style=="Rounded"){
-    $border="30px";
-}elseif($style=="Squared"){
+    if($style=="Rounded"){
+       $border="30px";
+    }elseif($style=="Squared"){
     $border="5px";
-}
-
-          
-
+    }
          //$res=($today_date - $start_date)/60/60/24;
          $res =findDateDiff($started_date, $today);
           if($res<=30){
- if($stars==1) {
+          if($stars==1) {
               $star=
               '
               <span class="fa fa-star checked"></span>
