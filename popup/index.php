@@ -62,8 +62,6 @@ function getUrlVars() {
 var qu = getUrlVars()["q"];
 var del = getUrlVars()["delay"];
 
-c_del=Number(del);
-
 
 
 var part = "fetch_data.php?q=";
@@ -78,6 +76,7 @@ document.getElementById("demo3").innerHTML = url;
  }, 100);
 
  setTimeout(fade_out,5000);
+ 
 function fade_out() {
   $("#load_posts").fadeOut().empty();
 }
