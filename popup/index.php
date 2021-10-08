@@ -67,7 +67,7 @@ document.getElementById("demo1").innerHTML = qu;
 document.getElementById("demo2").innerHTML = del;
 document.getElementById("demo3").innerHTML = url;
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
-  $('#load_posts').load("fetch_data.php?q='+qu+'&delay='+delay+'");
+  $('#load_posts').load(url);
   //$('#load_posts').load("fetch_data.php?q=8&delay=200").fadeIn("slow");
   //load() method fetch data from fetch.php page
  }, 100);
