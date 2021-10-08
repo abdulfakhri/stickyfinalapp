@@ -47,10 +47,20 @@
 <script>
     
 $(document).ready(function(){
-    
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+var qu = getUrlVars()["q"];
+var delay = getUrlVars()["delay"];
 
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
-  $('#load_posts').load("fetch_data.php?q=8&delay=200");
+  $('#load_posts').load("fetch_data.php?q=".qu."&delay="+delay);
   //$('#load_posts').load("fetch_data.php?q=8&delay=200").fadeIn("slow");
   //load() method fetch data from fetch.php page
  }, 100);
