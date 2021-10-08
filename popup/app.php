@@ -71,7 +71,7 @@ var url=part+qu+"&delay="+del;
   //load() method fetch data from fetch.php page
  }, 100);
 
- setTimeout(fade_out, 100);
+ setTimeout(fade_out, 1000);
  
 function fade_out() {
   $("#load_posts").fadeOut().empty();
