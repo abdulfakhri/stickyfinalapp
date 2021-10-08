@@ -60,10 +60,10 @@ function getUrlVars() {
 }
 
 var qu = getUrlVars()["q"];
-var delay = getUrlVars()["delay"];
-var url="fetch_data.php?q=".qu."&delay=".delay.";
+var del = getUrlVars()["delay"];
+var url="fetch_data.php?q=qu&delay=del";
 document.getElementById("demo1").innerHTML = qu;
-document.getElementById("demo2").innerHTML = delay;
+document.getElementById("demo2").innerHTML = del;
 document.getElementById("demo3").innerHTML = url;
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
   $('#load_posts').load("fetch_data.php?q='+qu+'&delay='+delay+'");
