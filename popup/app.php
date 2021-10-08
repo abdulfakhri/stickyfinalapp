@@ -81,7 +81,7 @@ var url=part+qu+"&delay="+del;
  
  document.getElementById("load").innerHTML = st;
 
- setTimeout(fade_out,  (getUrlVars()["delay"]));
+ setTimeout(fade_out,  (1000 * (getUrlVars()["delay"])));
  
 function fade_out() {
   $("#load_posts").fadeOut().empty();
