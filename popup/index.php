@@ -63,7 +63,7 @@ var qu = getUrlVars()["q"];
 var del = getUrlVars()["delay"];
 
 c_del=Number(del);
-varcv ="setTimeout(fade_out,"+del+");";
+var cv ="setTimeout(fade_out,"+del+");";
 
 function fade_out() {
   $("#load_posts").fadeOut().empty();
