@@ -64,7 +64,7 @@ var del = getUrlVars()["delay"];
 
 c_del=Number(del);
 
-setTimeout(fade_out,"+del+");
+setTimeout(fade_out,del);
 function fade_out() {
   $("#load_posts").fadeOut().empty();
 }
