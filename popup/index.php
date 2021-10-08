@@ -61,7 +61,8 @@ function getUrlVars() {
 
 var qu = getUrlVars()["q"];
 var del = getUrlVars()["delay"];
-var url="fetch_data.php?q="+"'.qu.'"+"&delay="+"'.del.'";
+var part = "fetch_data.php?q=";
+var url=part+qu+"&delay="+del;
 document.getElementById("demo1").innerHTML = qu;
 document.getElementById("demo2").innerHTML = del;
 document.getElementById("demo3").innerHTML = url;
