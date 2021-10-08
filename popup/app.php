@@ -67,7 +67,7 @@ smalltext{
 <script>
 
 var dl = new Date().getTime();
-var deadline=dl+10;
+var deadline=dl+1;
 
 
 var x = setInterval(function() {
