@@ -72,9 +72,14 @@ return $days;
 
 $qw=$_GET['q'];
 
+$delay=$_GET["delay"];
+$date_delay = date('Y-m-d H:i:s', (time() +$delay));
+$date = date('Y-m-d H:i:s');
+echo $date; 
 
+     if($date_d==$date){
 
-$sql = "SELECT * FROM sticky_review WHERE st_user='$qw' ORDER BY st_id DESC LIMIT 1";
+       $sql = "SELECT * FROM sticky_review WHERE st_user='$qw' ORDER BY st_id DESC LIMIT 1";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -87,7 +92,7 @@ if (mysqli_num_rows($result) > 0) {
 
           $started_date=$_GET["st_date"];
 
-           $delay=$_GET["delay"];
+          
 
           $today=date("Y-m-d hh:mm:ss");
           $start_date = strtotime($started_date);
@@ -166,13 +171,19 @@ if($style=="Rounded"){
          
        
           }
-         
-
-
    }
-} else {
-    echo "0 results";
 }
+
+     }elseif($date_d<$date){
+
+       echo "No";
+     }else{
+
+       echo "No";
+     }
+
+
+ 
 
 mysqli_close($conn);
 ?>

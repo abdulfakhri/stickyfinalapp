@@ -47,11 +47,14 @@
 <script>
     
 $(document).ready(function(){
-var myVar = setInterval(myTimer, 10);
-function myTimer() {
- $('#load_posts').load("fetch_data.php?q=8").fadeIn("slow");
-}
-clearInterval(myVar);
+    
+
+ setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
+  $('#load_posts').load("fetch_data.php?q=8&delay=5").fadeIn("slow");
+  //load() method fetch data from fetch.php page
+ }, 1000);
+
+
  
 });
 
