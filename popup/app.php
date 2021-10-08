@@ -66,12 +66,13 @@ smalltext{
 
 <script>
 
-var deadline = <?php echo date('Y-m-d H:i:s', (time() +20)); ?>;
+var dl = new Date().getTime();
+var deadline=dl+10;
 
 
 var x = setInterval(function() {
 
-var now = <?php echo date('Y-m-d h:i:s'); ?>;
+var now = new Date().getTime();
 var t = deadline - now;
 var days = Math.floor(t / (1000 * 60 * 60 * 24));
 var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
