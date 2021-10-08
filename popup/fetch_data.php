@@ -108,7 +108,7 @@ $date = date('Y-m-d H:i:s');
           $style=$_GET["style"];
 
     if($style=="Rounded"){
-       $border="30px";
+       $border="30px 20px";
     }elseif($style=="Squared"){
     $border="5px";
     }
