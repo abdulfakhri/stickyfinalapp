@@ -171,7 +171,9 @@ $date = date('Y-m-d H:i:s');
    }
 }
 
-     }else if($date>$date_delay){
+     }
+     
+     if($date>$date_delay){
 
        echo "No";
 
