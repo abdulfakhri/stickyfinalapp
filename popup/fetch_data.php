@@ -105,7 +105,7 @@ $date = date('Y-m-d H:i:s');
           $start_date = strtotime($started_date);
           $today_date = strtotime($today);
 
-          $style=$row["style"];
+          $style=$_GET["style"];
 
     if($style=="Rounded"){
        $border="30px";

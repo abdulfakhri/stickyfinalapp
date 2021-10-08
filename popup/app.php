@@ -59,27 +59,19 @@ function getUrlVars() {
 
 var qu = getUrlVars()["q"];
 var del = getUrlVars()["delay"];
+var styl = getUrlVars()["style"];
 
 
 var part = "fetch_data.php?q=";
-var url=part+qu+"&delay="+del;
+var url=part+qu+"&delay="+del+"&style="+styl;
 
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
 
 
 	$('#load_posts').load(url);
-  //$('#load_posts').load("fetch_data.php?q=8&delay=200");
-  //load() method fetch data from fetch.php page
+  
  }, 100);
- var cr=parseInt(del);
- //setTimeout(fade_out, 10000);
- var p1="setTimeout(fade_out, ";
- var p2=del;
- var p3=");";
- var st=p1+p2+p3;
- console.log(st);
- 
- document.getElementById("load").innerHTML = st;
+
 
  setTimeout(fade_out,  (1000 * (getUrlVars()["delay"])));
  
