@@ -37,7 +37,7 @@
 
    <br />
    <br />
-   <div id="load_posts"></div>
+   <div id="load_posts" style='border:1px solid gray;border-radius:<?php echo $_GET['style'];?>;'></div>
    <div id="load"></div>
    <!-- Refresh this Div content every second!-->
    <!-- For Refresh Div content every second

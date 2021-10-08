@@ -82,8 +82,7 @@ $qw=$_GET['q'];
 $delay=$_GET["delay"];
 $date_delay = date('Y-m-d H:i:s', (time() +$delay));
 $date = date('Y-m-d H:i:s');
-//echo $date; 
-$style=$_GET["style"];
+
 
 //if($date_delay<$date){
 
@@ -106,13 +105,7 @@ $style=$_GET["style"];
           $start_date = strtotime($started_date);
           $today_date = strtotime($today);
 
-          $style=$_GET["style"];
-
-    if($style=="Rounded"){
-       $border="30px";
-    }elseif($style=="Squared"){
-       $border="5px";
-    }
+       
          //$res=($today_date - $start_date)/60/60/24;
          $res =findDateDiff($started_date, $today);
           if($res<=30){
@@ -164,8 +157,8 @@ $style=$_GET["style"];
               <span class="fa fa-star checked"></span>
               ';
           }
-       echo "<div id='review' style='border-radius:'".$style."'>";
-       echo "<table style='border:1px solid gray;'>";
+       echo "<div id='review'>";
+       echo "<table>";
        echo "<tr>";
        echo "<td>"."<img style='width:62px; height:62px;border-radius: 30px 30px;' src=".$up.">"."</td>";
        echo "<td>".
