@@ -60,7 +60,15 @@ function getUrlVars() {
 }
 
 var qu = getUrlVars()["q"];
-var del = getUrlVars()["delay"];
+integer del = getUrlVars()["delay"];
+
+setTimeout(fade_out,del);
+
+function fade_out() {
+  $("#load_posts").fadeOut().empty();
+}
+
+
 var part = "fetch_data.php?q=";
 var url=part+qu+"&delay="+del;
 document.getElementById("demo1").innerHTML = qu;
@@ -72,11 +80,7 @@ document.getElementById("demo3").innerHTML = url;
   //load() method fetch data from fetch.php page
  }, 100);
 
- setTimeout(fade_out, (getUrlVars()["delay"]));
-
-function fade_out() {
-  $("#load_posts").fadeOut().empty();
-}
+ 
 
  
 });
