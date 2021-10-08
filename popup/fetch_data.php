@@ -161,8 +161,7 @@ $date = date('Y-m-d H:i:s');
        echo "<table>";
        echo "<tr>";
        echo "<td>"."<img style='width:62px; height:62px;border-radius: 30px 30px;' src=".$up.">"."</td>";
-       echo "<td>".
-       $row["st_name"]."<br>".$row["st_desc"]."<br>".$star."<br>"
+       echo "<td>"."<b>".$row["st_name"]."</b>"."<br>".$row["st_desc"]."<br>".$star."<br>"
        ."</td>";
        echo "</tr>";
        echo "</table >";
