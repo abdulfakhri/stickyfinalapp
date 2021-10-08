@@ -50,7 +50,7 @@ $(document).ready(function(){
     
 
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
-  $('#load_posts').load("fetch_data.php?q=8&delay=5").fadeIn("slow");
+  $('#load_posts').load("fetch_data.php?q=8&delay=1000").fadeIn("slow");
   //load() method fetch data from fetch.php page
  }, 1000);
 
