@@ -164,7 +164,7 @@ $style=$_GET["style"];
               <span class="fa fa-star checked"></span>
               ';
           }
-       echo "<div id='review' style='border-radius:'".$border."'>";
+       echo "<div id='review' style='border-radius:'".$style."'>";
        echo "<table style='border:1px solid gray;'>";
        echo "<tr>";
        echo "<td>"."<img style='width:62px; height:62px;border-radius: 30px 30px;' src=".$up.">"."</td>";

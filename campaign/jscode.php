@@ -44,7 +44,7 @@ $js_code= '<iframe
 width="300" 
 height="90" 
 style="border:1px solid gray;"
-src="'.$link.'/popup/fetch_data.php?q='.$user.'&delay='.$delay.'&style='.$style.'" 
+src="'.$link.'/popup/fetch_data.php?q='.$user.'&delay='.$delay.'&style='.$border.'" 
 title="Javascript Code" frameborder="0" 
 allow="accelerometer; 
 autoplay; clipboard-write;
