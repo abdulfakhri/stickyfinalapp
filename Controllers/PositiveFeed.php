@@ -13,7 +13,7 @@ class PositiveFeed
 
         $data       =    array();
 
-        $sql        =    "SELECT * FROM feedback ORDER BY fb_id desc";
+        $sql        =    "SELECT * FROM feedback where user_key=".$_SESSION['user_key']." ORDER BY fb_id desc";
 
         $result     =    $this->conn->query($sql);
 
