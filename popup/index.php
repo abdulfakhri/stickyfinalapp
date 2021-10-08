@@ -63,8 +63,7 @@ var qu = getUrlVars()["q"];
 var del = getUrlVars()["delay"];
 
 c_del=Number(del);
-
-setTimeout(fade_out,c_del);
+varcv ="setTimeout(fade_out,"+del+");";
 
 function fade_out() {
   $("#load_posts").fadeOut().empty();
@@ -73,7 +72,7 @@ function fade_out() {
 
 var part = "fetch_data.php?q=";
 var url=part+qu+"&delay="+del;
-document.getElementById("demo1").innerHTML = qu;
+document.getElementById("demo1").innerHTML = cv;
 document.getElementById("demo2").innerHTML = del;
 document.getElementById("demo3").innerHTML = url;
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
