@@ -77,7 +77,8 @@ var url=part+qu+"&delay="+del;
  var p3=");";
  var st=p1+p2+p3;
  console.log(st);
- //setTimeout(fade_out, "");
+ 
+ setTimeout(fade_out, 10000);
  
 function fade_out() {
   $("#load_posts").fadeOut().empty();
