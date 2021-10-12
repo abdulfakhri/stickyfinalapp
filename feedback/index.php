@@ -163,7 +163,7 @@ require_once ('../includes/footer.php');
                             $('#staticBackdrop').modal('hide');
                             alert(data);
                            // setInterval('refresh()',100);
-                           window.location.reload();
+                           window.location = "index.php";
                         }
                     })
                 }
@@ -215,7 +215,8 @@ $('.updatecamp').click(function () {
        success:function (data) {
            alert(data);
            //setInterval('refresh()',100);
-            window.location.reload();
+            //window.location.reload();
+            window.location = "index.php";
        }
 
    })
@@ -230,7 +231,8 @@ $(document).on('click','.delete',function () {
             success: function (data) {
                 alert(data);
                 //setInterval('refresh()', 100);
-                 window.location.reload();
+                 //window.location.reload();
+                 window.location = "index.php";
             }
         });
     }
