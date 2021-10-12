@@ -162,7 +162,7 @@ require_once ('../includes/footer.php');
                             $('#campInsertForm')[0].reset();
                             $('#staticBackdrop').modal('hide');
                             alert(data);
-                            setInterval('refresh()',100);
+                           // setInterval('refresh()',100);
                         }
                     })
                 }
@@ -213,7 +213,7 @@ $('.updatecamp').click(function () {
        cache:false,
        success:function (data) {
            alert(data);
-           setInterval('refresh()',100);
+           //setInterval('refresh()',100);
        }
 
    })
@@ -227,7 +227,7 @@ $(document).on('click','.delete',function () {
             data: {campaign: campaign},
             success: function (data) {
                 alert(data);
-                setInterval('refresh()', 100);
+                //setInterval('refresh()', 100);
             }
         });
     }
