@@ -17,11 +17,8 @@
         <div class="row justify-content-center" style="margin-top: 20px;">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Campaigns
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-outline-primary float-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            Add
-                        </button>
+                    <div class="card-header">Overview Campaigns
+                       
 
                         <!-- Modal -->
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
