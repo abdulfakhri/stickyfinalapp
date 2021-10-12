@@ -115,8 +115,8 @@ require_once ('../includes/header.php');
                                     <td> <?php echo $camp['date_reg']; ?> </td>
                                     <td> <?php echo $camp['date_update']; ?> </td>
                                     <td><a href="/campaign/jscode.php" target="_blank">Get Code</a></td>
-                                    <td> <button  id="<?php echo $camp['id'];?>" class="btn btn-info update"><i class="fa fa-edit"></i></button>
-                                        <button  id="<?php echo $camp['id'];?>"  class="btn btn-danger delete"><i class="fa fa-trash"></i></button>
+                                    <td> <button  id="<?php echo $camp['id'];?>" class="btn update"><i class="fa fa-edit"></i></button>
+                                        <button  id="<?php echo $camp['id'];?>"  class="btn delete"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
 
