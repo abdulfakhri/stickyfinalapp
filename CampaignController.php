@@ -1,6 +1,8 @@
 <?php
-class PositiveFeed
-{
+
+class CampaignController {
+
+    // constructor
     function __construct($conn) {
 
         $this->conn = $conn;
@@ -8,12 +10,14 @@ class PositiveFeed
     }
 
 
-    // retrieving Positive data
+    // retrieving Campaign data
     public function index() {
 
         $data       =    array();
 
-        $sql        =    "SELECT * FROM feedback where user_key=".$_SESSION['user_key']." ORDER BY fb_id desc";
+        //$sql        =    "SELECT * FROM campaigns where user_key=".$_SESSION['user_key']."";
+        
+        $sql        =    "SELECT * FROM campaigns ";
 
         $result     =    $this->conn->query($sql);
 
@@ -26,3 +30,5 @@ class PositiveFeed
         return $data;
     }
 }
+
+?>

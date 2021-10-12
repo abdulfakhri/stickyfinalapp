@@ -49,7 +49,7 @@ $camps = $dCtrl->index();
         echo '
   
   <center>
-<div class="card border-info mb-3 animate_animated animate_fadeInRight" style="max-width: 25rem;">
+<div class="card border-info mb-3 animate__animated animate__fadeInRight" style="max-width: 25rem;">
   <div class="card-header bg-transparent border-success">Feed Back Form</div>
   <div class="card-body ">
   <div class="card-img-top"><img src="../review_link/uploads/'.$camp['rev_image'].'" class="img-fluid" alt=""></div>
@@ -86,7 +86,6 @@ $camps = $dCtrl->index();
                                                     <i class="fa fa-star star-light submit_star mr-1" id="submit_star_5" data-rating="5"></i>
                                                 </h4>
                                                 <input type="hidden" name="rating" id="rating" value="" />
-                                                <input type="hidden" name="user" id="user" value="'.$camp['user_key'].'" />
                                                 <hr>
                                             </div>
                                             <div class="form-group d-grid gap-2">
@@ -115,7 +114,6 @@ $camps = $dCtrl->index();
         <div class="form-group" style="text-align: left;">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" class="form-control">
-        <input type="hidden" name="user" id="user"  value="'.$camp['user_key'].'" class="form-control">
 </div>
   <div class="form-group" style="text-align: left;">
         <label for="phone">Phone (Optional)</label>

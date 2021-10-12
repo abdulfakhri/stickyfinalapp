@@ -1,7 +1,7 @@
 <?php
 class DBController {
 
-    /*
+   
     private $hostname  =   "localhost";
 
     private $username  =   "u591963919_PopupReviewUsr";
@@ -9,14 +9,8 @@ class DBController {
     private $password  =   "PopUp123";
 
     private $db        =   "u591963919_PopupReviewDB";
-    */
-    private $hostname  =   "localhost";
-
-    private $username  =   "u587940520_sticky_newu";
-
-    private $password  =   "!@#123qweasdZXC";
-
-    private $db        =   "u587940520_sticky_newdb";
+    
+ 
     //create connection
     public function connect() {
 

@@ -15,9 +15,7 @@ class CampaignController {
 
         $data       =    array();
 
-        //$sql        =    "SELECT * FROM campaigns where user_key=".$_SESSION['user_key']."";
-        
-        $sql        =    "SELECT * FROM campaigns ";
+        $sql        =    "SELECT * FROM campaigns where user_key=".$_SESSION['user_key']."";
 
         $result     =    $this->conn->query($sql);
 
