@@ -163,7 +163,8 @@ require_once ('../includes/footer.php');
                             $('#staticBackdrop').modal('hide');
                             alert(data);
                            // setInterval('refresh()',100);
-                           window.location.reload();
+                          // window.location.reload();
+                           window.location = "index.php";
                         }
                     })
                 }
@@ -215,7 +216,8 @@ $('.updatecamp').click(function () {
        success:function (data) {
            alert(data);
            //setInterval('refresh()',100);
-            window.location.reload();
+            //window.location.reload();
+            window.location = "index.php";
        }
 
    })
@@ -230,7 +232,8 @@ $(document).on('click','.delete',function () {
             success: function (data) {
                 alert(data);
                 //setInterval('refresh()', 100);
-                 window.location.reload();
+                 //window.location.reload();
+                 window.location = "index.php";
             }
         });
     }
@@ -261,14 +264,3 @@ $('#toggle-on').click(function () {
     }
 </script>
 
-<script>
-    $('#exampleModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text('New message to ' + recipient)
-  modal.find('.modal-body input').val(recipient)
-})
-</script>
