@@ -17,7 +17,7 @@
         <div class="row justify-content-center" style="margin-top: 20px;">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Overview Campaigns
+                    <div class="card-header">Campaigns Overview 
                        
 
                         <!-- Modal -->

@@ -13,7 +13,8 @@ class NegetiveFeed
 
         $data       =    array();
 
-        $sql        =    "SELECT * FROM negative_fb  order by nf_id desc";
+        
+        $sql        =    "SELECT * FROM negative_fb where nf_user = ".$_SESSION['user_key']." order by nf_id desc ";
 
         $result     =    $this->conn->query($sql);
 

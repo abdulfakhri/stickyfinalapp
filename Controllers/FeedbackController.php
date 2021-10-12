@@ -13,7 +13,7 @@ class FeedbackController
 
         $data       =    array();
 
-        $sql        =    "SELECT * FROM review_link where rev_slug='".$_GET['slug']."'";
+        $sql        =    "SELECT * FROM review_link WHERE rev_slug='".$_GET['slug']."' AND user_key='".$_SESSION['user_key']."'";
 
         $result     =    $this->conn->query($sql);
 
