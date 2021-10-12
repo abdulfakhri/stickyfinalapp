@@ -100,11 +100,6 @@ require_once ('../includes/header.php');
                             <?php
                             foreach($camps as $camp) : ?>
 
-                        
-
-                            
-
-
                                 <tr>
                                     <td id="b_id"> <?php echo $camp['id']; ?> </td>
                                     <td> <?php echo $camp['campaign_name']; ?> </td>
@@ -114,7 +109,7 @@ require_once ('../includes/header.php');
                                     <td> <?php echo $camp['branding']; ?> </td>
                                     <td> <?php echo $camp['date_reg']; ?> </td>
                                     <td> <?php echo $camp['date_update']; ?> </td>
-                                    <td><a href="/campaign/jscode.php" target="_blank">Get Code</a></td>
+                                    <td> <?php echo $camp['js_code']; ?> </td>
                                     <td> <button  id="<?php echo $camp['id'];?>" class="btn btn-info update"><i class="fa fa-edit"></i></button>
                                         <button  id="<?php echo $camp['id'];?>"  class="btn btn-danger delete"><i class="fa fa-trash"></i></button>
                                     </td>
@@ -162,7 +157,7 @@ require_once ('../includes/footer.php');
                             $('#campInsertForm')[0].reset();
                             $('#staticBackdrop').modal('hide');
                             alert(data);
-                            setInterval('refresh()',100);
+                            window.location = "index.php";
                         }
                     })
                 }
@@ -213,7 +208,7 @@ $('.updatecamp').click(function () {
        cache:false,
        success:function (data) {
            alert(data);
-           setInterval('refresh()',100);
+         window.location = "index.php";
        }
 
    })
@@ -227,7 +222,7 @@ $(document).on('click','.delete',function () {
             data: {campaign: campaign},
             success: function (data) {
                 alert(data);
-                setInterval('refresh()', 100);
+                window.location = "index.php";
             }
         });
     }
@@ -256,16 +251,4 @@ $('#toggle-on').click(function () {
     function refresh() {
         location.reload(true);
     }
-</script>
-
-<script>
-    $('#exampleModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text('New message to ' + recipient)
-  modal.find('.modal-body input').val(recipient)
-})
 </script>
